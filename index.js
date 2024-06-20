@@ -1,10 +1,11 @@
 // Across Protocol
 
+
 import dotenv from "dotenv";
 dotenv.config()
 
 
-const execution_id = 3843341;
+const execution_id_across = 3843341;
 const api_key = process.env.API_KEY || undefined
 
 
@@ -16,10 +17,28 @@ if (!api_key) {
 
 const options = { method: 'GET', headers: { 'X-DUNE-API-KEY': api_key } };
 
-const testFunction = async () => {
+const AcrossFunction = async () => {
 
-    const res = fetch(`https://api.dune.com/api/v1/query/${execution_id}/results`, options)
+    const res = fetch(`https://api.dune.com/api/v1/query/${execution_id_across}/results`, options)
         .then(response => response.json()
             .then(response => console.log(response.result)))
+
 }
-testFunction()
+
+AcrossFunction()
+
+
+// Stargate Protocol
+
+
+const execution_id_stargate = 3846726;
+
+const StargateFunction = async () => {
+
+    const res = fetch(`https://api.dune.com/api/v1/query/${execution_id_stargate}/results`, options)
+        .then(response => response.json()
+            .then(response => console.log(response.result)))
+
+}
+
+StargateFunction()
