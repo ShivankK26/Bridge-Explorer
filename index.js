@@ -31,11 +31,11 @@ AcrossFunction()
 // Stargate Protocol
 
 
-const execution_id_stargate = 3846726;
+const execution_id_stargate = 3800468;
 
 const StargateFunction = async () => {
 
-    const res = fetch(`https://api.dune.com/api/v1/query/${execution_id_stargate}/results`, options)
+    const res = fetch(`https://api.dune.com/api/v1/query/${execution_id_stargate}/results?limit=1000`, options)
         .then(response => response.json()
             .then(response => console.log(response.result)))
 
